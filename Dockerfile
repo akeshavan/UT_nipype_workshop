@@ -8,6 +8,8 @@ RUN git clone https://github.com/akeshavan/nbpapaya && \
 ENV NB_USER anisha
 RUN useradd -m -s /bin/bash -N -u 1000 $NB_USER 
 USER $NB_USER
+COPY start_notebook.sh /work/start_notebook.sh
+ENTRYPOINT ["/work/start_notebook.sh"]
 
 
 
